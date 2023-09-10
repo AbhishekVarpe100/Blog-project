@@ -18,12 +18,17 @@ app.use(cors({
 
 app.use(cookieParser())
 app.use(express.static('public'))
-const DB='mongodb+srv://abhi:abhi@cluster0.u1ezulu.mongodb.net/blog?retryWrites=true&w=majority'
+
+
+const DB='mongodb+srv://abhishekvarpe634:abhi@cluster0.fe7gdxl.mongodb.net/blogproject?retryWrites=true&w=majority'
 mongoose.connect(DB).then(()=>{
+    
     console.log("Connection successfully")
 })
+
+
 .catch((err)=>{
-    console.log("No connection")
+    console.log("No connection to database")
 });
 app.post('/register', (req, res) => {
     const { username, email, password } = req.body;
