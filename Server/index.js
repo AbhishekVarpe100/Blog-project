@@ -20,13 +20,11 @@ app.use(cookieParser())
 app.use(express.static('public'))
 
 
-const DB='mongodb+srv://abhishekvarpe634:abhi@cluster0.fe7gdxl.mongodb.net/blogproject?retryWrites=true&w=majority'
+const DB='mongodb+srv://abhishekvarpe634:abhi@cluster0.fe7gdxl.mongodb.net/db?retryWrites=true&w=majority'
 mongoose.connect(DB).then(()=>{
     
     console.log("Connection successfully")
 })
-
-
 .catch((err)=>{
     console.log("No connection to database")
 });
